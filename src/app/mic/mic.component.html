@@ -1,0 +1,16 @@
+<div class="container">
+  <div>
+    <button
+      id="speech"
+      class="btn"
+      (click)="onMicClick()"
+      [style.background-color]="isMicOpen ? 'red' : 'blue'"
+    >
+      <fa-icon [icon]="faMicrophone"></fa-icon>
+    </button>
+  </div>
+  <div style="width: 100px; text-align: center; margin-top: 5px">
+    <p *ngIf="!isMicOpen; else listening">Click on the mic to speak</p>
+    <ng-template #listening>Listening...</ng-template>
+  </div>
+</div>

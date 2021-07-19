@@ -1,0 +1,81 @@
+$primary: #189bff;
+$secondary: #d8d8d8;
+$size: 100px;
+
+body {
+  margin: 0;
+  font-size: $size/8;
+}
+
+.btn {
+  border: none;
+  padding: 0;
+  border-radius: 100%;
+  width: $size;
+  height: $size;
+  font-size: 3em;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  background: red;
+  position: relative;
+  z-index: 999;
+  display: inline-block;
+  line-height: $size;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+}
+
+.pulse-ring {
+  content: "";
+  width: $size;
+  height: $size;
+  background: $primary;
+  border: 5px solid $primary;
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  animation: pulsate infinite 1.5s;
+}
+
+.pulse-ring.delay {
+  // animation-delay: 1s;
+}
+
+@-webkit-keyframes pulsate {
+  0% {
+    -webkit-transform: scale(1, 1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1.3, 1.3);
+    opacity: 0;
+  }
+}
+
+.container {
+  margin: 20px;
+  height: 45vh;
+}
+
+.m-left {
+  margin-left: $size * 3;
+}
+
+.type2 {
+  background: $primary;
+}
+
+.type2 .pulse-ring {
+  background: transparent;
+}
